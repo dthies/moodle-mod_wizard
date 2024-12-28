@@ -12,8 +12,8 @@ After installation
 1. An admin or manager creates a course with template activities.
 2. The option 'Course presets' in the secondary navigation on the course
 page will open a page to edit presets.
-3. Clicking 'Add preset' opens a form to crate a new preset.
-4. The admin or manager provides a name and descriptions, selects one or
+3. Clicking 'Add preset' opens a form to create a new preset.
+4. The admin or manager provides a name and description, selects one or
 more activity templates from the course, adds configuration instructions
 and saves.
 5. Users that should be allowed to use the template need to be given
@@ -21,7 +21,7 @@ capabilities 'mod/wizard:use' and 'moodle/backup:backuptargetimport' in
 the course where the preset is located. They also need the capability
 'mod/wizard:addinstance' in the target course. By default the Editing
 teacher role should have these capabilities.
-6. When teacher is editing a course opens the activity chooser, the
+6. When the teacher editing a course opens the activity chooser, the
 presets are displayed along with the standard activities.
 7. When the teacher selects a preset, an editing form appears for the
 teacher to confirm.
