@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="240" height="240" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="20 25 45 55" style="enable-background:new 0 0 74.4 74.4;" xml:space="preserve" preserveAspectRatio="xMinYMid meet">
+    <defs>
+    </defs>
+<g fill="black">
+    <path 
+	    d="M38 49
+           C5 55, 30 60, 50 60
+           C75 58, 70 52, 55 50
+        " stroke="black" fill="none" stroke-width="5"/>
+    <path 
+	    d="M35 55
+           C50 20, 49 20, 55 55
+        " stroke="black" fill="none" stroke-width="5"/>
+</g>
+</svg>
