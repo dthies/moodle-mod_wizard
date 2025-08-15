@@ -16,16 +16,44 @@
 
 namespace mod_wizard\event;
 
-use core_event\base;
+use core\event\base;
 
 /**
- * The potion_created event class.
+ * The preset_updated event class.
  *
  * @package     mod_wizard
  * @category    event
  * @copyright   2024 Daniel Thies <dethies@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class potion_created extends base {
-    // For more information about the Events API please visit {@link https://docs.moodle.org/dev/Events_API}.
+class preset_updated extends preset_created {
+    /**
+     * Init method.
+     *
+     * @return void
+     */
+    protected function init(): void {
+        $this->data['objecttable'] = 'wizard_preset';
+        $this->data['crud'] = 'u';
+        $this->data['edulevel'] = self::LEVEL_PARTICIPATING;
+    }
+
+    /**
+     * Returns localised general event name.
+     *
+     * @return string
+     */
+    public static function get_name() {
+        return get_string('eventpresetupdated', 'mod_wizard');
+    }
+
+    /**
+     * Returns non-localised event description with id's for admin use only.
+     *
+     * @return string
+     */
+    public function get_description() {
+        return "The user with id '$this->userid' updated a course preset with "
+                . "id '$this->objectid'.";
+    }
 }

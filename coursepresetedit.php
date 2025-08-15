@@ -23,6 +23,8 @@
  */
 
 use core\output\notification;
+use mod_wizard\event\preset_created;
+use mod_wizard\event\preset_updated;
 
 require_once('../../config.php');
 
@@ -70,6 +72,13 @@ if ($form->is_cancelled()) {
     }
     $data = file_postupdate_standard_editor($data, 'postscript', $options, $context, 'mod_wizard', 'postscript', $data->id);
     $DB->update_record('wizard_preset', $data);
+    if (!empty($data->timecreated) && $data->timecreated == $data->timemodified) {
+        $event = preset_created::create_from_record($data);
+    } else {
+        $data->timecreated = $DB->get_field('wizard_preset', 'timecreated', ['id' => $data->id]);
+        $event = preset_updated::create_from_record($data);
+    }
+    $event->trigger();
     $redirecturl = new moodle_url('/mod/wizard/coursepresets.php', ['id' => $courseid]);
     $notice = get_string('coursepresetaddsuccess', 'mod_wizard', $data->name);
 
